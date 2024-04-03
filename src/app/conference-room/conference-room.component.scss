@@ -1,0 +1,13 @@
+video {
+  width: 100%;
+  background-color: rgba(gray, .2);
+}
+.flex-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.action-wrapper {
+  justify-content: center;
+  margin-top: 24px;
+}
