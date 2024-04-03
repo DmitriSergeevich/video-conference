@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LobbyComponent} from "./lobby.component";
+import { LobbyComponent } from './lobby.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LobbyComponent
-  }
+    {
+        path: '',
+        component: LobbyComponent,
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule],
 })
-export class LobbyRoutingModule { }
+export class LobbyRoutingModule {}
