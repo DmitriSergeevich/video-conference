@@ -3,8 +3,8 @@
   <video #received_video [autoplay]="true"></video>
 </div>
 <div class="flex-wrapper action-wrapper">
-  <button mat-raised-button color="primary">Начать трансляцию</button>
-  <button mat-raised-button color="warn">Завершить трансляцию</button>
+  <button mat-raised-button color="primary" (click)="startLocalVideo()">Начать трансляцию</button>
+  <button mat-raised-button color="warn" (click)="pauseLocalVideo()">Остановить трансляцию</button>
   <button mat-raised-button>Вызов</button>
   <button mat-raised-button>Завершить вызов</button>
 </div>

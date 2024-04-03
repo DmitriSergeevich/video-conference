@@ -26,6 +26,16 @@ export class ConferenceRoomComponent implements OnInit, AfterViewInit {
 
     private async requestMediaDevices(): Promise<void> {
         this.localStream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
+        this.pauseLocalVideo();
+    }
+
+    pauseLocalVideo(): void {
+        this.localStream?.getTracks().forEach((track) => (track.enabled = false));
+        this.localVideo.nativeElement.srcObject = undefined;
+    }
+
+    startLocalVideo(): void {
+        this.localStream?.getTracks().forEach((track) => (track.enabled = true));
         this.localVideo.nativeElement.srcObject = this.localStream;
     }
 }
