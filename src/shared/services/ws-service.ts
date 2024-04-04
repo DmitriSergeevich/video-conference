@@ -16,6 +16,11 @@ export class WsService {
 
     connect(): void {
         this.socket$ = this.getNewWebsocket();
+
+        this.socket$.subscribe((msg) => {
+            console.log('Receive message: ', msg.type);
+            this.messageSubject.next(msg);
+        });
     }
 
     private getNewWebsocket(): WebSocketSubject<any> {
