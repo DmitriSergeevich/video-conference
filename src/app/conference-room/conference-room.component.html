@@ -1,10 +1,16 @@
-<div class="flex-wrapper video-wrapper">
-  <video #local_video [autoplay]="true" [muted]="true"></video>
-  <video #received_video [autoplay]="true"></video>
+<div class="flex-wrapper">
+  <div class="video-wrapper">
+    <span class="video-description">Вы</span>
+    <video #local_video class="video video--local" [autoplay]="true" [muted]="true"></video>
+  </div>
+  <div class="video-wrapper">
+    <span class="video-description">Собеседник</span>
+    <video #remote_video class="video" [autoplay]="true"></video>
+  </div>
 </div>
 <div class="flex-wrapper action-wrapper">
-  <button mat-raised-button color="primary" (click)="startLocalVideo()">Начать трансляцию</button>
-  <button mat-raised-button color="warn" (click)="pauseLocalVideo()">Остановить трансляцию</button>
-  <button mat-raised-button>Вызов</button>
-  <button mat-raised-button>Завершить вызов</button>
+  <button mat-raised-button  (click)="startLocalVideo()">Включить видео</button>
+  <button mat-raised-button  (click)="pauseLocalVideo()">Остановить видео</button>
+  <button mat-raised-button color="primary" (click)="call()">Вызов</button>
+  <button mat-raised-button color="warn" (click)="hangUp()" >Завершить вызов</button>
 </div>
